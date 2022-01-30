@@ -27,7 +27,7 @@ void strings_task_1(char *buffer) {
     buffer[4] = '9';
 
     // TODO: Replace this with your code.
-    
+    buffer[5] = '\0';
 }
 
 /***************************************
@@ -44,9 +44,10 @@ void strings_task_1(char *buffer) {
  * Using the strlen() function may help.
  ***************************************/
 void strings_task_2(char *buffer) {
-    for(int i = 0; i < sizeof(buffer); i++) {
+    for(int i = 0; i < strlen(buffer); i++) {
         // TODO: Replace this with your code.
-    }
+        buffer[i] = toupper(buffer[i]);
+    } 
 }
 
 /***************************************
@@ -61,8 +62,9 @@ void strings_task_2(char *buffer) {
  * worry about freeing the space used.
  ***************************************/
 char *strings_task_3(char *buffer) {
-    
     // TODO: Replace this with your code.
-    return NULL;
+    char *bufferTwo = (char *) malloc(strlen(buffer));
+    strcpy(bufferTwo, buffer);
+    return bufferTwo;
 
 }
